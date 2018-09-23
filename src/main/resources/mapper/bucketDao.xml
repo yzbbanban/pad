@@ -7,14 +7,14 @@
     <select id="selectByPrimaryKey" resultType="com.yzb.pad.pojo.Bunker" parameterType="string">
         select
         <include refid="Base_Column_List"/>
-        from dbo.T_AddRaw
+        from T_AddRaw
         where F_Bunker = #{bunker}
     </select>
 
     <select id="listBunkerByPage" resultType="com.yzb.pad.pojo.Bunker">
         select
         <include refid="Base_Column_List"/>
-        from dbo.T_AddRaw
+        from T_AddRaw
     </select>
 
 </mapper>
