@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yzb.pad.dao.BunkerDao">
-    <resultMap id="BaseResultMap" type="com.yzb.pad.pojo.Bunker">
-        <id column="F_Bunker" property="bunker" jdbcType="VARCHAR"/>
-        <result column="F_Raw" property="raw" jdbcType="VARCHAR"/>
-        <result column="F_Batch" property="batch" jdbcType="VARCHAR"/>
-        <result column="F_Weight" property="weight" jdbcType="DOUBLE"/>
-    </resultMap>
     <sql id="Base_Column_List">
         F_Bunker as bunker, F_Raw as raw, F_Batch as batch, F_Weight as weight
     </sql>
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="string">
+    <select id="selectByPrimaryKey" resultType="com.yzb.pad.pojo.Bunker" parameterType="string">
         select
         <include refid="Base_Column_List"/>
-        from T_AddRaw
+        from dbo.T_AddRaw
         where F_Bunker = #{bunker}
     </select>
 
-    <select id="listBunkerByPage" resultMap="BaseResultMap">
+    <select id="listBunkerByPage" resultType="com.yzb.pad.pojo.Bunker">
         select
         <include refid="Base_Column_List"/>
-        from T_AddRaw
+        from dbo.T_AddRaw
     </select>
 
 </mapper>

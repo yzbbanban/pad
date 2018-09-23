@@ -7,11 +7,10 @@ spring:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:sqlserver://192.168.0.111:1433;DatabaseName=TestDB
+    url: jdbc:sqlserver://192.168.0.111:1433;DatabaseName=CMTPLWeight
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     username: sa
-    password: Yangyang
+    password: Yangyang520
 mybatis:
-   typeAliasesPackage: com.yzb.pad.pojo
    mapperLocations: classpath:mapper/*.xml
    type: com.alibaba.druid.pool.DruidDataSource
