@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:sqlserver://192.168.0.111:1433;DatabaseName=TestDB
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: Yangyang
+mybatis:
+   typeAliasesPackage: com.yzb.pad.pojo
+   mapperLocations: classpath:mapper/*.xml
+   type: com.alibaba.druid.pool.DruidDataSource
