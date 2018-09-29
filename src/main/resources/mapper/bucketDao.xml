@@ -4,6 +4,19 @@
     <sql id="Base_Column_List">
         F_Bunker as bunker, F_Raw as raw, F_Batch as batch, F_Weight as weight
     </sql>
+    <insert id="save">
+      INSERT INTO T_AddRaw
+      (F_Bunker,F_Raw ,F_Batch,F_Weight)
+      VALUES
+      (#{bunker},#{raw} ,#{batch},#{weight})
+    </insert>
+    <update id="update">
+        UPDATE T_AddRaw
+        SET
+        F_Raw =#{raw},F_Batch=#{batch},F_Weight=#{weight}
+        WHERE
+        F_Bunker=#{bunker}
+    </update>
     <select id="selectByPrimaryKey" resultType="com.yzb.pad.pojo.Bunker" parameterType="string">
         select
         <include refid="Base_Column_List"/>

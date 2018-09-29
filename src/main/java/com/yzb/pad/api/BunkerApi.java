@@ -27,13 +27,17 @@ public class BunkerApi {
     @PostMapping("save")
     public ServerResponse<String> save(Bucket bucket) {
         logger.info("====bucket==> " + bucket.toString());
-        Bunker bunker=new Bunker();
-        bunker.setBunker(bucket.getBucketName());
+        Bunker bunker = new Bunker();
+        bunker.setBunker(bucket.getIdName());
         bunker.setRaw(bucket.getBucketName());
         bunker.setWeight(bucket.getWeight());
         bunker.setBatch(bucket.getBucketSendDate());
-        bunkerService.saveBunker(bunker);
-        return ServerResponse.createBySuccess(bucket.toString());
+        if (bunkerService.saveBunker(bunker)) {
+            logger.info("====bucket==> success");
+            return ServerResponse.createBySuccess();
+        }
+        logger.info("====bucket==> error");
+        return ServerResponse.createByError();
     }
 
 

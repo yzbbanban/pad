@@ -17,8 +17,23 @@ public interface BunkerDao {
     Bunker selectByPrimaryKey(String bunker);
 
     /**
-     *
      * @return 列表
      */
     List<Bunker> listBunkerByPage();
+
+    /**
+     * 更新数据
+     *
+     * @param bunker bu
+     * @return >0成功
+     */
+    int update(Bunker bunker);
+
+    /**
+     * 插入数据
+     *
+     * @param bunker bu
+     * @return >0插入成功
+     */
+    int save(Bunker bunker);
 }
