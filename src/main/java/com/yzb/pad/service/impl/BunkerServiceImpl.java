@@ -20,12 +20,12 @@ public class BunkerServiceImpl implements IBunkerService {
     @Override
     public boolean saveBunker(Bunker bunker) {
         int row = 0;
-        Bunker bu = bunkerDao.selectByPrimaryKey(bunker.getBunker());
-        if (bu != null) {
-            row = bunkerDao.update(bunker);
-        } else {
+//        Bunker bu = bunkerDao.selectByPrimaryKey(bunker.getBunker());
+//        if (bu != null) {
+//            row = bunkerDao.update(bunker);
+//        } else {
             row = bunkerDao.save(bunker);
-        }
+//        }
         return row > 0;
     }
 
