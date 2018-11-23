@@ -31,7 +31,7 @@ public class BunkerApi {
         bunker.setBunker(bucket.getIdName());
         bunker.setRaw(bucket.getBucketName());
         bunker.setWeight(bucket.getWeight());
-        bunker.setBatch(bucket.getBucketSendDate());
+        bunker.setBatch(bucket.getBucketNumber());
         if (bunkerService.saveBunker(bunker)) {
             logger.info("====bucket==> success");
             return ServerResponse.createBySuccess();
